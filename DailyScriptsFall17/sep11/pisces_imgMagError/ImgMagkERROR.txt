@@ -1,0 +1,41 @@
+********************************************************************************
+# ==============================================================================
+# Author : Bhishan Poudel; PhD Student Ohio University
+# Email  : bhishanpdl@gmail.com
+# Date   : Sep 11, 2017 Mon
+# Summary:
+# ==============================================================================
+
+Imagemagick Error
+
+NEVER INSTALL IMAGEMAGICK ON Pisces
+
+
+
+coudl not run any commands
+library liking failed.
+
+To undo the changes:
+
+cd /usr/local/lib
+sudo -H mv libjpeg.dylib libjpeg.dylib.backup
+sudo -H ln -s /System/Library/Frameworks/ImageIO.framework/Resources/libJPEG.dylib libJPEG.dylib
+sudo -H mv libtiff.dylib libtiff.dylib.backup
+sudo -H ln -s /System/Library/Frameworks/ImageIO.framework/Resources/libTIFF.dylib libTIFF.dylib
+sudo -H mv libpng.dylib libpng.dylib.backup
+sudo -H ln -s /System/Library/Frameworks/ImageIO.framework/Resources/libPng.dylib libPNG.dylib
+
+
+
+
+Problem
+=======
+chgrp -R admin /usr/local
+chmod -R g+w /usr/local
+chgrp -R admin /Library/Caches/Homebrew
+chmod -R g+w /Library/Caches/Homebrew
+
+
+brew update
+
+Then everything failed!!!!
